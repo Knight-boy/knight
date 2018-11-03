@@ -2,12 +2,12 @@
 sitemap: false
 ---
 
-@import "variables";
-@import "reset";
-@import "base";
-@import "site";
-@import "utilities";
-@import "syntax";
+@import "_variables";
+@import "_reset";
+@import "_base";
+@import "_site";
+@import "_utilities";
+@import "_syntax";
 @import "vendor/fonts";
 @import "vendor/font-awesome/font-awesome";
 @import "vendor/magnific-popup/magnific-popup";
