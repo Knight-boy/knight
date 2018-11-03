@@ -1,0 +1,40 @@
+# Site settings
+title: Knight
+description: 'You can't leave this world to the people you despise.'
+url: 'https://knight-boy.github.io/Self' 
+baseurl: ''
+google_analytics: 'UA-501066-1'
+# disqus_shortname: 'your-disqus-name'
+
+author:
+  name: 'Knight'
+  email: hpanw@foxmail.com
+  #twitter_username: knight
+  facebook_username: knight
+  github_username:  knight-boy
+  #linkedin_username:  knight
+
+defaults:
+  -
+    scope:
+      path: ''
+      type: 'posts'
+    values:
+        layout: 'post'
+
+# Build settings
+destination: _site
+paginate: 10
+permalink: /:year/:title/
+markdown: kramdown
+highlighter: rouge
+
+kramdown:
+  syntax_highlighter: rouge
+  # use Github Flavored Markdown
+  input: GFM
+  # do not replace newlines by <br>s
+  hard_wrap: false
+
+plugins: ['jekyll-paginate']
+exclude: ['README.md', 'Gemfile', 'Gemfile.lock', 'src']
