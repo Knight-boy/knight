@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "A Post with a Video"
-date:   2016-03-15
+date:   2018-11-03
 excerpt: "Custom written post descriptions are the way to go... if you're not lazy."
 tag:
 - sample
@@ -9,7 +9,7 @@ tag:
 - video
 comments: true
 ---
-<iframe width="560" height="315" src="//www.youtube.com/embed/SU3kYxJmWuQ" frameborder="0"> </iframe>
+<iframe width="560" height="315" src="//www.runoob.com/try/demo_source/mov_bbb.mp4" frameborder="0"> </iframe>
 
 Video embeds are responsive and scale with the width of the main content block with the help of [FitVids](http://fitvidsjs.com/).
 
