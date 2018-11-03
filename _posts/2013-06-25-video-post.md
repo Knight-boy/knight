@@ -9,7 +9,7 @@ tag:
 - video
 comments: true
 ---
-<iframe width="560" height="315" src="//www.runoob.com/try/demo_source/mov_bbb.mp4" frameborder="0"> </iframe>
+<center><iframe width="560" height="315" src="//www.runoob.com/try/demo_source/mov_bbb.mp4" frameborder="0"> </iframe></center>
 
 Video embeds are responsive and scale with the width of the main content block with the help of [FitVids](http://fitvidsjs.com/).
 
