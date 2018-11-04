@@ -1,6 +1,7 @@
 ---
 sitemap: false
 ---
+<<<<<<< HEAD
 /*
  *something wrong
  */
@@ -10,6 +11,15 @@ sitemap: false
 @import "site";
 @import "utilities";
 @import "syntax";
+=======
+
+@import "_variables";
+@import "_reset";
+@import "_base";
+@import "_site";
+@import "_utilities";
+@import "_syntax";
+>>>>>>> 82efc4a2a00e2b59c6aaeb6c17f654e7da183db3
 @import "vendor/fonts";
 @import "vendor/font-awesome/font-awesome";
 @import "vendor/magnific-popup/magnific-popup";
