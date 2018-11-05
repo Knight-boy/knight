@@ -37,7 +37,7 @@ body {
 	height: 100%;
 	position: relative;
 	width: 100%;
-	min-height: 430px;
+	min-height: 300px;
 	text-align: left;
 	color: $white;
 	@media #{$small} {
@@ -70,7 +70,7 @@ body {
 	align-items: center;
 }
 .container {
-	width: 50rem;
+	width: 36rem;
 	max-width: 550px;
 	padding-right: 15px;
 	padding-left: 15px;
