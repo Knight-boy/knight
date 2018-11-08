@@ -14,7 +14,7 @@ comments: true
 ---
 
 ![Moon Homepage](https://cloud.githubusercontent.com/assets/754514/14509720/61c61058-01d6-11e6-93ab-0918515ecd56.png)    
-​    
+
 <center><b>Moon</b> is a minimal, one column jekyll theme.</center>
 
  I'm not a developer or designer. And I don't add footer to show who did this theme. If you like this theme or using it, please give a **star** for motivation, It makes me happy.
@@ -26,7 +26,7 @@ comments: true
 * Edit `_config.yml` file.
 * Remove sample posts from `_posts` folder and add yours.
 * Edit `index.md` file in `about` folder.
-* Change repo name to `YourUserName.github.io`    
+* Change repo name to `YourUserName.github.io` 
   
 
 That's all.
@@ -46,12 +46,12 @@ That's all.
 ​	https://cloud.githubusercontent.com/assets/754514/14509718/61b09a20-01d6-11e6-8da1-4202ae4d83cd.png
 ​	https://cloud.githubusercontent.com/assets/754514/14509715/61aa9d00-01d6-11e6-81a6-c6837edf2e84.png
 {% endcapture %}
-{% include gallery images=images caption="Moon Theme on Small Screen Size" cols=2 %}      
-​      
-See a [live version of Blog](https://knight-boy.github.io) hosted on GitHub.      
+{% include gallery images=images caption="Moon Theme on Small Screen Size" cols=2 %} 
+
+See a [live version of Blog](https://knight-boy.github.io) hosted on GitHub. 
 
 ## Site Setup
-A quick checklist of the files you’ll want to edit to get up and running.    
+A quick checklist of the files you’ll want to edit to get up and running. 
 
 ### Site Wide Configuration
 `_config.yml` is your friend. Open it up and personalize it. Most variables are self explanatory but here's an explanation of each if needed:
@@ -77,7 +77,7 @@ Used to generate absolute urls in `sitemap.xml`, `feed.xml`, and for generating 
 Examples:
 
 {% highlight yaml %}
-url: http://taylantatli.me/Moon
+url: http://www.knightboy.cn
 url: http://localhost:4000
 url: //cooldude.github.io
 url:
