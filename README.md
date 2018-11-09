@@ -1,4 +1,4 @@
-# Personal Site [![Donate](https://img.shields.io/badge/paypal-donate-blue.svg)](https://www.paypal.me/taylantatli/0usd)  
+# Toss in lab
 
 ## `There will be no update until I buy a new laptop.`
 
@@ -16,6 +16,8 @@
 
 ## Preview
 
-See a [Blog](https://knight-boy.github.io) hosted on GitHub.
+[My final blog](https://www.knightboy.cn/Blog)
 
-## Getting Started
+[QQnoe](https://www.knightboy.cn/QQone)
+
+[Resume](https://www.knightboy.cn/QQone/Myself/Resume)
