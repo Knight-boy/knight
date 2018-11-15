@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Blog Theme"
-date:   2018-11-05
+date:   2018-11-04
 excerpt: "Minimal, one column Jekyll theme for your blog."
 project: true
 tag:
@@ -33,12 +33,11 @@ That's all.
 
 ## Preview
 
-{% capture images %}
-​	https://cloud.githubusercontent.com/assets/754514/14509716/61ac6c8e-01d6-11e6-879f-8308883de790.png
-​	https://cloud.githubusercontent.com/assets/754514/14509717/61ad05ae-01d6-11e6-85ae-5a817dd8763b.png
-​	https://cloud.githubusercontent.com/assets/754514/14509714/61a89708-01d6-11e6-8fcd-74b002a060df.png
-{% endcapture %}
-{% include gallery images=images caption="Screenshots of Moon Theme" cols=3 %}
+| ![pic1](https://cloud.githubusercontent.com/assets/754514/14509716/61ac6c8e-01d6-11e6-879f-8308883de790.png) | ![pic2](https://cloud.githubusercontent.com/assets/754514/14509717/61ad05ae-01d6-11e6-85ae-5a817dd8763b.png) | ![pic3](https://cloud.githubusercontent.com/assets/754514/14509714/61a89708-01d6-11e6-8fcd-74b002a060df.png) |
+| :----------------------------------------------------------: | :----------------------------------------------------------: | :----------------------------------------------------------: |
+|                       **Screenshots**                        |                         **of Moon**                          |                          **Theme**                           |
+
+
 
 ---
 
