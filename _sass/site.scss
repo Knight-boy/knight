@@ -119,11 +119,11 @@ body {
 #disqus_thread {
 	width: 75%;
 	max-width: 850px;
-	margin: -3rem auto 4rem;
-	background: $white;
+	margin: -3rem auto 3rem;
+	background: rgba(255,255,255,0.6);
 	color: $color_tuatara;
 	padding: 2em;
-	border-radius: 3px;
+	border-radius: 25px;
 	box-shadow: 0 0 10px 0 rgba($color_shark,0.3);
 	@include transition(.5s);
 	@media #{$small} {
