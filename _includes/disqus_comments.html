@@ -1,8 +1,6 @@
 {% if page.comments and site.disqus_shortname %}
   <script type="text/javascript">
-    window.livereOptions = {
-      refer: '{{ page.path }}'
-    };
+    var disqus_shortname = '{{ site.disqus_shortname }}';
     (function(d, s) {
       var j, e = d.getElementsByTagName(s)[0];
       if (typeof LivereTower === 'function') { return; }
@@ -11,5 +9,13 @@
       j.async = true;
       e.parentNode.insertBefore(j, e);
     })(document, 'script');
+    (function(d, s) {
+      var i, ele = d.getElementsByTagName(s)[0];
+      i = d.createElement(s);
+      i.setAttribute('id','lv-container');
+      i.setAttribute('data-id','city');
+      i.setAttribute('data-uid',disqus_shortname);
+      ele.parentNode.appendChild(i);
+    })(document, 'div');
   </script>
 {% endif %}
