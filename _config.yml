@@ -27,7 +27,7 @@ sass:
   style:            compressed
 
 # Comments
-disqus_shortname:   #knightboy
+disqus_shortname:   true
 
 # Social
 # if you don't have any of social below, comment the line.
