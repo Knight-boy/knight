@@ -5,12 +5,7 @@ date:   2018-11-04
 excerpt: "Minimal, one column Jekyll theme for your blog."
 project: true
 tag:
-- jekyll 
-- moon
-- blog
 - about
-- theme
-comments: true
 ---
 
 ![Moon Homepage](https://cloud.githubusercontent.com/assets/754514/14509720/61c61058-01d6-11e6-93ab-0918515ecd56.png)    
@@ -33,9 +28,15 @@ That's all.
 
 ## Preview
 
-| ![pic1](https://cloud.githubusercontent.com/assets/754514/14509716/61ac6c8e-01d6-11e6-879f-8308883de790.png) | ![pic2](https://cloud.githubusercontent.com/assets/754514/14509717/61ad05ae-01d6-11e6-85ae-5a817dd8763b.png) | ![pic3](https://cloud.githubusercontent.com/assets/754514/14509714/61a89708-01d6-11e6-8fcd-74b002a060df.png) |
-| :----------------------------------------------------------: | :----------------------------------------------------------: | :----------------------------------------------------------: |
-|                       **Screenshots**                        |                         **of Moon**                          |                          **Theme**                           |
+{% capture images %}
+​	https://cloud.githubusercontent.com/assets/754514/14509716/61ac6c8e-01d6-11e6-879f-8308883de790.png
+
+​	https://cloud.githubusercontent.com/assets/754514/14509717/61ad05ae-01d6-11e6-85ae-5a817dd8763b.png
+
+​	https://cloud.githubusercontent.com/assets/754514/14509714/61a89708-01d6-11e6-8fcd-74b002a060df.png
+
+{% endcapture %}
+{% include gallery images=images caption="Screenshots of Moon Theme" cols=3 %}
 
 ---
 
@@ -133,10 +134,10 @@ Moon Theme use [Jekyll Compress](https://github.com/penibelst/jekyll-compress-ht
 
 You can set feature image per post. Just add `feature: some link` to your post's front matter.
 
-```
+``` gfm
 feature: /assets/img/some-image.png
 or
-feaure: http://example.com/some-image.png
+feature: http://example.com/some-image.png
 ```
  This also will be used for twitter card:
 
