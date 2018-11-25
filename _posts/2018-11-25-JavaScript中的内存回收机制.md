@@ -5,7 +5,7 @@ date: 2018-11-25
 excerpt: "浏览器垃圾回收机制和C/C++中的垃圾回收机制有着天然的区别。垃圾能否及时回收关乎到程序运行的健壮性。"
 tag:
 - Web
-  comments: true
+comments: true
 ---
 
 ## 一、内存泄漏
@@ -357,7 +357,5 @@ setTimeout(this.tickFunc, 100);
 <https://developer.mozilla.org/en-US/docs/Web/JavaScript/Memory_Management#Release_when_the_memory_is_not_needed_anymore>
 
 <https://www.cnblogs.com/zhwl/p/4664604.html>
-
-### More：
 
 <http://www.ruanyifeng.com/blog/2017/04/memory-leak.html>
