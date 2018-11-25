@@ -12,7 +12,7 @@ locale:             zh_CN
 url:                https://knight-boy.github.io
 
 # Jekyll
-permalink:          /:title/
+permalink:          :year/:month/:day/:title/
 markdown:           kramdown
 highlighter:        rouge
 kramdown:
