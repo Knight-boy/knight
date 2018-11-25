@@ -9,7 +9,7 @@ background:         'assets/img/placeholder-big.jpg'
 # Set this true if you want to tile your background image, otherwise it will be covered
 tiled_bg:           true
 locale:             zh_CN
-url:                https://knight-boy.github.io
+url:                https://www.knightboy.cn
 
 # Jekyll
 permalink:          :year/:month/:day/:title/
