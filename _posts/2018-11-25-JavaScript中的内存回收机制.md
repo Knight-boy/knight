@@ -19,7 +19,7 @@ comments: true
 ```html
 <html>
     <body>
-        <script type = "text/javascript">
+        <script type="text/javascript">
              document.write("Circular referances between Javascript and DOM!");
              var obj;
              window.onload = function() {
@@ -42,7 +42,7 @@ comments: true
 ```html
 <html>
 <head>
-    <script type= "text/javascript">
+    <script type="text/javascript">
         document.write("Circular references between Javascript and DOM!");
         function myFunction(element) {
             this.elementReferences = element;
@@ -56,7 +56,7 @@ comments: true
         }
     </script>
 </head>
-<body onload= "Leak()">
+<body onload="Leak()">
     <div id="myDiv"></div>
 </body>
 </html>
@@ -73,7 +73,7 @@ comments: true
 ```html
 <html>
 <body>
-    <script type = "text/javascript">
+    <script type="text/javascript">
         document.write("Closure Demo!");
         window.onload = 
             function closureDemoParentFunction(paramA)
@@ -181,7 +181,7 @@ function assignHandler() {
             };
             (function anotherInnerFunction() {
                 var obj = document.getElementById("element");
-                obj.onclick = anotherObj；
+                obj.onclick = anotherObj;
             })();
      </script>
      <button id="element">"Click Here"</button>
@@ -192,8 +192,6 @@ function assignHandler() {
 ​       第三种方法可以通过添加一个函数来避免闭包，从而防止泄漏。
 
 ```html
- <html>
- <head>
  <script type="text/javascript">
      document.write("Avoid leaks by avoiding closures!");
      window.onload=function()
@@ -211,7 +209,6 @@ function assignHandler() {
  <body>
      <button id="element">"Click Here"</button>
  </body>
- </html>  
 ```
 
 ## 二、垃圾回收
@@ -353,9 +350,6 @@ setTimeout(this.tickFunc, 100);
 ## Reference：
 
 分别于2018.07.07，2018.07.08 发布于博客园-[垃圾收集](https://www.cnblogs.com/princess-knight/p/9277830.html)、[内存泄漏](https://www.cnblogs.com/princess-knight/p/9280500.html)
-
 <https://developer.mozilla.org/en-US/docs/Web/JavaScript/Memory_Management#Release_when_the_memory_is_not_needed_anymore>
-
 <https://www.cnblogs.com/zhwl/p/4664604.html>
-
 <http://www.ruanyifeng.com/blog/2017/04/memory-leak.html>
