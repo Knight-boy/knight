@@ -17,20 +17,16 @@ comments: true
 ​       当两个对象相互引用时，会形成一个循环引用，使每个对象的引用计数为1，在纯粹的垃圾收集系统中，循环引用不是问题：如果任何其他对象都不引用所涉及的对象，则两者都是会被视为垃圾而回收。但是，在引用计数系统中，两个对象都不能被销毁，因为引用计数永远不会减到零。在使用垃圾回收和引用计数的混合系统中，由于系统无法识别循环引用而导致泄漏。在这种情况下，DOM对象和Javascript对象都不会被破坏。
 
 ```html
-<html>
-    <body>
-        <script type="text/javascript">
-             document.write("Circular referances between Javascript and DOM!");
-             var obj;
-             window.onload = function() {
-                 obj = document.getElementById("DivElement");
-                 document.getElementById("DivElement").expandoProperty = obj;
-                 Array(1000).join(new Array(2000).join("XXXXX"));
-            }
-        </script>
-        <div id="DivElement">Div Element</div>
-    </body>
-</html>
+<script type="text/javascript">
+    document.write("Circular referances between Javascript and DOM!");
+    var obj;
+    window.onload = function() {
+        obj = document.getElementById("DivElement");
+        document.getElementById("DivElement").expandoProperty = obj;
+        Array(1000).join(new Array(2000).join("XXXXX"));
+    }
+</script>
+<div id="DivElement">Div Element</div>
 ```
 
 ​       如上面代码所示，Javascript对象obj引用了DivElement表示的DOM对象。DOM对象反过来又通过expandoProperty对Javascript对象有一个引用。Javascript对象和DOM对象之间存在循环引用。因为DOM对象通过引用计数进行管理，所以两个对象都不会被销毁。
@@ -39,27 +35,18 @@ comments: true
 
 ​       下面代码中，通过调用外部函数myFunction来创建循环引用。Javascript对象和DOM对象之间的循环引用将最终导致内存泄漏。
 
-```html
-<html>
-<head>
-    <script type="text/javascript">
-        document.write("Circular references between Javascript and DOM!");
-        function myFunction(element) {
-            this.elementReferences = element;
-            //this code forms a circular references here
-            //by DOM-->JS-->DOM
-            element.expandoProperty = this;
-        }
-        function Leak() {
-            //this code will leak;
-            new myFunction(document.getElementById("myDiv"));
-        }
-    </script>
-</head>
-<body onload="Leak()">
-    <div id="myDiv"></div>
-</body>
-</html>
+```javascript
+document.write("Circular references between Javascript and DOM!");
+function myFunction(element) {
+	this.elementReferences = element;
+	//this code forms a circular references here
+	//by DOM-->JS-->DOM
+	element.expandoProperty = this;
+}
+function Leak() {
+	//this code will leak;
+	new myFunction(document.getElementById("myDiv"));
+}
 ```
 
 ​       正如上面这两类代码示例所显示的，循环很容易创建。他们还倾向于在Javascript中最方便的编程结构：闭包。
@@ -70,25 +57,16 @@ comments: true
 
 ​       一个简单的闭包例子
 
-```html
-<html>
-<body>
-    <script type="text/javascript">
-        document.write("Closure Demo!");
-        window.onload = 
-            function closureDemoParentFunction(paramA)
-            {
-                 var a = paramA;
-                 return function closureDemoInnerFunction(paramB)
-                 {
-                      alert(a + " " + paramB);
-                 };
-            };
-         var x=closureDemoParentFunction("outer x");
-         x("inner x");
-    </script>
-</body>
-</html>
+```javascript
+document.write("Closure Demo!");
+window.onload = function closureDemoParentFunction(paramA){
+    var a = paramA;
+    return function closureDemoInnerFunction(paramB){
+    	alert(a + " " + paramB);
+	};
+};
+var x=closureDemoParentFunction("outer x");
+x("inner x");
 ```
 
 ​       在上面的代码中，closureDemoInnerFunction是父函数closureDemoParentFunction中定义的内部函数。当用外部x的参数对closureDemoParentFunction进行调用时，外部函数变量a被赋值外部x。函数返回一个指向内部函数closureDemoInnerFunction的指针，它包含在变量x中。必须注意的是，外部函数closureDemoParentFunction的局部变量a即使在外部函数返回后也会存在。这与C++等编程语言不同，在函数返回后，局部变量不再存在。在Javascript中，调用closureDemoParentFunction的时刻，创建一个具有属性a的作用域对象。此属性包含paramA的值，也称为"outer x"。同样，当closureDemoParentFunction 返回时，它将返回内部函数closureDemoInnerFunction，它包含在变量x中。
@@ -126,21 +104,17 @@ function assignHandler() {
 ​      在下面的代码中，你将会发现，一个JavaScript对象（obj）包含对DOM对象（由id"元素"引用）的引用的闭包。DOM元素反过来又具有对Javascript obj的引用。在Javascript对象和DOM对象之间产生的循环引用会导致内存泄漏。
 
 ```html
-<html>
-<body>
-    <script type="text/javascript">
-        document.write("Program to illustrate memory leak via closure");
-        window.onload = function outerFunction() {
-            var obj = document.getElementById("element");
-            obj.onclick = function innerFunction() {
-                 alert("Hi!,I will leak");
-            };
-            obj.bigString = new Array(1000).join(new Array(2000).join("XXXXX"));
+<script type="text/javascript">
+    document.write("Program to illustrate memory leak via closure");
+    window.onload = function outerFunction() {
+        var obj = document.getElementById("element");
+        obj.onclick = function innerFunction() {
+            alert("Hi!,I will leak");
         };
-    </script>
-    <button id="element">Click Me</button>
-</body>
-</html>
+        obj.bigString = new Array(1000).join(new Array(2000).join("XXXXX"));
+    };
+</script>
+<button id="element">Click Me</button>
 ```
 
 ### **1.5 避免内存泄漏的方法**
@@ -148,45 +122,37 @@ function assignHandler() {
 ​       在Javascript中，内存泄露的另一方面是你可以避免它们。当您确定了可以导致循环引用的模式时，正如前面所列举的那样，您可以开始围绕它们进行工作。我们将使用上面三种的事件处理中内存泄漏的方式解决已知内存泄露的方法。一个简单的解决方案是使Javascript对象obj设为null，从而显式中断循环引用。
 
 ```html
-<html>
-<body>
-    <script type="text/javascript">
-        document.write("Avoiding memory leak via closure by breaking the circular reference");
-        window.onload=function outerFunction(){
-            var obj = document.getElementById("element");
-            obj.onclick=function innerFunction() {
-                alert("Hi! I have avoided the leak");
-                // 一些逻辑代码
-            };
+<script type="text/javascript">
+    document.write("Avoiding memory leak via closure by breaking the circular reference");
+    window.onload=function outerFunction(){
+        var obj = document.getElementById("element");
+        obj.onclick=function innerFunction() {
+            alert("Hi! I have avoided the leak");
+            // 一些逻辑代码
+        };
         obj.bigString=new Array(1000).join(new Array(2000).join("XXXXX"));
         obj = null; //显示中断循环引用
-        };
-     </script>
-     <button id="element">"Click Here"</button>
-</body>
-</html>                       
+    };
+</script>
+<button id="element">"Click Here"</button>                    
 ```
 
 ​       另一种方法是通过添加一个闭包，可以避免Javascript对象和DOM对象之间的循环引用。
 
 ```html
-<html>
-<body>
-    <script type="text/javascript">
-        document.write("Avoiding memory leak via closure by adding another closure");
-        window.onload=function outerFunction(){
-            var anotherObj=function innerFunction() {
-                alert("Hi! I have avoided the leak");
-                // 一些逻辑代码
-            };
-            (function anotherInnerFunction() {
-                var obj = document.getElementById("element");
-                obj.onclick = anotherObj;
-            })();
-     </script>
-     <button id="element">"Click Here"</button>
-</body>
-</html>
+<script type="text/javascript">
+    document.write("Avoiding memory leak via closure by adding another closure");
+    window.onload=function outerFunction(){
+        var anotherObj=function innerFunction() {
+            alert("Hi! I have avoided the leak");
+            // 一些逻辑代码
+        };
+        (function anotherInnerFunction() {
+            var obj = document.getElementById("element");
+            obj.onclick = anotherObj;
+        })();
+</script>
+<button id="element">"Click Here"</button>
 ```
 
 ​       第三种方法可以通过添加一个函数来避免闭包，从而防止泄漏。
@@ -205,10 +171,7 @@ function assignHandler() {
           alert("Hi! I have avoided the leak"); 
      }
  </script>
- </head>
- <body>
-     <button id="element">"Click Here"</button>
- </body>
+ <button id="element">"Click Here"</button>
 ```
 
 ## 二、垃圾回收
