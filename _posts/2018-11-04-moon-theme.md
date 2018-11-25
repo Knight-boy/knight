@@ -12,8 +12,6 @@ tag:
 
 <center><b>Moon</b> is a minimal, one column jekyll theme.</center>
 
- I'm not a developer or designer. And I don't add footer to show who did this theme. If you like this theme or using it, please give a **star** for motivation, It makes me happy.
-
 <iframe src="https://ghbtns.com/github-btn.html?user=Knight-boy&repo=knight-boy.github.io&type=star&count=true&size=large" frameborder="0" scrolling="0" width="160px" height="30px"></iframe>    
 
 ## Installation
@@ -29,12 +27,9 @@ That's all.
 ## Preview
 
 {% capture images %}
-​	https://cloud.githubusercontent.com/assets/754514/14509716/61ac6c8e-01d6-11e6-879f-8308883de790.png
-
-​	https://cloud.githubusercontent.com/assets/754514/14509717/61ad05ae-01d6-11e6-85ae-5a817dd8763b.png
-
-​	https://cloud.githubusercontent.com/assets/754514/14509714/61a89708-01d6-11e6-8fcd-74b002a060df.png
-
+https://cloud.githubusercontent.com/assets/754514/14509716/61ac6c8e-01d6-11e6-879f-8308883de790.png
+https://cloud.githubusercontent.com/assets/754514/14509717/61ad05ae-01d6-11e6-85ae-5a817dd8763b.png
+https://cloud.githubusercontent.com/assets/754514/14509714/61a89708-01d6-11e6-8fcd-74b002a060df.png
 {% endcapture %}
 {% include gallery images=images caption="Screenshots of Moon Theme" cols=3 %}
 
@@ -77,7 +72,7 @@ Examples:
 {% highlight yaml %}
 url: http://www.knightboy.cn
 url: http://localhost:4000
-url: //cooldude.github.io
+url: https://knightboy.github.io
 url:
 {% endhighlight %}
 
@@ -110,16 +105,12 @@ To set what links appear in the top navigation edit `_data/navigation.yml`. Use 
 {% highlight yaml %}
 - title: Home
   url: /
-
 - title: Blog
   url: /blog/
-
 - title: Projects
   url: /projects/
-
 - title: About
   url: /about/
-
 - title: Moon
   url: http://taylantatli.me/Moon
 {% endhighlight %}
