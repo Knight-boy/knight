@@ -31,9 +31,9 @@ disqus_shortname:   MTAyMC80MDkzNC8xNzQ1OQ==
 
 # Social
 # if you don't have any of social below, comment the line.
-#google:
+google:
   #plus:            #username
-  #analytics:
+  analytics: UA-130421911-1
   #verify:
   #ad-client:
   #ad-slot:
