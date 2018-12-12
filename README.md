@@ -1,7 +1,9 @@
-# Toss in lab
+## Toss in lab
 
-[My final blog](https://www.knightboy.cn)
+[Single column](https://www.knightboy.cn/trigram)
 
-[QQzone](https://www.knightboy.cn/QQone)
+[Double column](https://www.knightboy.cn)
 
 [Resume](https://www.knightboy.cn/QQone/Myself/Resume)
+
+~[QQzone](https://www.knightboy.cn/QQone)~
